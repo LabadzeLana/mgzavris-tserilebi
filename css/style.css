@@ -1,0 +1,1651 @@
+/* ==========================================================================
+   ილია ჭავჭავაძე — „მგზავრის წერილები“ (1861)
+   XIX საუკუნის ეპოქალური დიზაინის სტილები (UI/UX)
+   ========================================================================== */
+
+:root {
+    --bg-parchment: #f4ebd9;
+    --bg-parchment-light: #fbf7ee;
+    --bg-parchment-dark: #e8dcbf;
+    --bg-card: #f9f3e6;
+    
+    --ink-black: #1d140e;
+    --ink-dark: #2b1e16;
+    --ink-medium: #4a382d;
+    --ink-light: #6d5849;
+    --ink-faded: #8c7360;
+    
+    --gold-primary: #a37c3f;
+    --gold-dark: #7a5824;
+    --gold-light: #d6af68;
+    
+    --bronze: #8c6227;
+    --tergi-cyan: #26555c;
+    --tergi-light: #447c84;
+    --crimson: #8a2522;
+    --forest-green: #2d4f33;
+
+    --border-ornate: #4a382d;
+    --border-soft: #c4b598;
+    
+    --shadow-soft: 0 4px 18px rgba(43, 30, 22, 0.12);
+    --shadow-deep: 0 8px 30px rgba(43, 30, 22, 0.22);
+    --shadow-inset: inset 0 2px 8px rgba(43, 30, 22, 0.08);
+
+    --font-serif: 'Noto Serif Georgian', 'Georgia', 'Playfair Display', serif;
+    --font-heading: 'Noto Serif Georgian', serif;
+    --font-body: 'Noto Serif Georgian', Georgia, serif;
+}
+
+/* Reset & Base Setup */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+    background-color: #2b1e16;
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--bg-parchment);
+    color: var(--ink-dark);
+    line-height: 1.7;
+    overflow-x: hidden;
+    position: relative;
+    background-image: 
+        radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.4) 0%, transparent 60%),
+        radial-gradient(circle at 10% 40%, rgba(163, 124, 63, 0.06) 0%, transparent 40%),
+        radial-gradient(circle at 90% 80%, rgba(138, 37, 34, 0.04) 0%, transparent 40%),
+        repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(43, 30, 22, 0.015) 2px, rgba(43, 30, 22, 0.015) 4px);
+    background-attachment: fixed;
+}
+
+/* Aged Parchment Vignette Effect around screen edges */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    box-shadow: inset 0 0 100px rgba(43, 30, 22, 0.25), inset 0 0 30px rgba(43, 30, 22, 0.35);
+    z-index: 999;
+}
+
+/* Typography & Drop Caps */
+h1, h2, h3, h4, h5 {
+    font-family: var(--font-heading);
+    color: var(--ink-dark);
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    line-height: 1.3;
+}
+
+p {
+    margin-bottom: 1.25rem;
+    color: var(--ink-medium);
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+.drop-cap::first-letter {
+    font-family: var(--font-heading);
+    float: left;
+    font-size: 3.4rem;
+    line-height: 0.85;
+    padding-top: 4px;
+    padding-right: 12px;
+    padding-bottom: 4px;
+    color: var(--gold-dark);
+    font-weight: 700;
+    text-shadow: 2px 2px 0px rgba(163, 124, 63, 0.2);
+}
+
+/* Ornate Dividers & Borders */
+.ornate-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 2.5rem 0;
+    color: var(--gold-primary);
+    font-size: 1.4rem;
+}
+
+.ornate-divider::before,
+.ornate-divider::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--gold-primary), transparent);
+    margin: 0 1rem;
+}
+
+.ornate-frame {
+    border: 2px solid var(--ink-dark);
+    padding: 1.5rem;
+    position: relative;
+    background-color: var(--bg-parchment-light);
+    box-shadow: var(--shadow-soft);
+}
+
+.ornate-frame::before {
+    content: "";
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    right: 4px;
+    bottom: 4px;
+    border: 1px dashed var(--gold-primary);
+    pointer-events: none;
+}
+
+/* Container */
+.container {
+    width: 92%;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+}
+
+/* ==========================================================================
+   Header & Masthead (ჟურნალ „ივერიისა“ და „ცისკრის“ სტილი)
+   ========================================================================== */
+
+.site-masthead {
+    border-bottom: 3px double var(--ink-dark);
+    padding: 1.5rem 0 1rem 0;
+    background: linear-gradient(to bottom, #ede1c8, var(--bg-parchment));
+    position: relative;
+}
+
+.masthead-top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.85rem;
+    color: var(--ink-light);
+    border-bottom: 1px solid var(--border-soft);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.25rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.top-bar-left, .top-bar-right {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.ambient-sound-btn {
+    background: none;
+    border: 1px solid var(--gold-dark);
+    color: var(--ink-dark);
+    padding: 0.35rem 0.85rem;
+    font-family: inherit;
+    font-size: 0.8rem;
+    cursor: pointer;
+    border-radius: 2px;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.ambient-sound-btn:hover {
+    background-color: var(--gold-primary);
+    color: #fff;
+}
+
+.ambient-sound-btn.playing {
+    background-color: var(--tergi-cyan);
+    color: #fff;
+    border-color: var(--tergi-cyan);
+}
+
+.masthead-title-area {
+    text-align: center;
+    padding: 1.5rem 0;
+}
+
+.masthead-issue {
+    font-size: 0.95rem;
+    letter-spacing: 3px;
+    color: var(--bronze);
+    text-transform: uppercase;
+    margin-bottom: 0.35rem;
+    font-weight: 600;
+}
+
+.masthead-title {
+    font-size: 3.2rem;
+    font-weight: 800;
+    color: var(--ink-black);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 0.3rem;
+    text-shadow: 1px 1px 0 rgba(163, 124, 63, 0.3);
+}
+
+.masthead-author {
+    font-size: 1.4rem;
+    font-style: italic;
+    color: var(--ink-dark);
+    margin-bottom: 0.75rem;
+}
+
+.masthead-motto {
+    max-width: 750px;
+    margin: 0 auto;
+    font-size: 1.05rem;
+    color: var(--ink-medium);
+    font-style: italic;
+    border-top: 1px solid var(--border-soft);
+    border-bottom: 1px solid var(--border-soft);
+    padding: 0.5rem 1rem;
+}
+
+/* Navigation Bar */
+.main-nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: var(--bg-parchment-light);
+    border-top: 1px solid var(--ink-dark);
+    border-bottom: 2px solid var(--ink-dark);
+    box-shadow: 0 4px 12px rgba(43, 30, 22, 0.1);
+}
+
+.nav-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    flex-wrap: wrap;
+    gap: 0.25rem;
+    padding: 0.25rem 0;
+}
+
+.nav-link {
+    display: block;
+    padding: 0.65rem 1.1rem;
+    color: var(--ink-dark);
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    border-radius: 2px;
+    transition: all 0.2s ease;
+    position: relative;
+}
+
+.nav-link:hover, .nav-link.active {
+    background-color: var(--ink-dark);
+    color: var(--bg-parchment);
+}
+
+.nav-link i {
+    margin-right: 0.4rem;
+    color: var(--gold-primary);
+}
+
+.nav-link:hover i, .nav-link.active i {
+    color: var(--gold-light);
+}
+
+/* ==========================================================================
+   Section Common Styling
+   ========================================================================== */
+
+section {
+    padding: 4rem 0;
+    position: relative;
+}
+
+.section-header {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 3rem auto;
+}
+
+.section-tag {
+    display: inline-block;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--gold-dark);
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    border: 1px solid var(--border-soft);
+    padding: 0.2rem 0.8rem;
+    border-radius: 2px;
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+.section-title {
+    font-size: 2.3rem;
+    margin-bottom: 0.75rem;
+    position: relative;
+}
+
+.section-subtitle {
+    font-size: 1.05rem;
+    color: var(--ink-light);
+    font-style: italic;
+    line-height: 1.6;
+}
+
+/* ==========================================================================
+   Hero Intro Block
+   ========================================================================== */
+
+.hero-section {
+    padding: 3rem 0 2rem 0;
+}
+
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 2.5rem;
+    align-items: center;
+}
+
+.hero-text-block {
+    padding: 2rem;
+}
+
+.hero-lead {
+    font-size: 1.15rem;
+    line-height: 1.8;
+    color: var(--ink-dark);
+    margin-bottom: 1.5rem;
+}
+
+.hero-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin: 1.5rem 0;
+}
+
+.hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.4rem 0.9rem;
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-soft);
+    font-size: 0.85rem;
+    color: var(--ink-medium);
+    border-radius: 2px;
+}
+
+.hero-badge i {
+    color: var(--gold-dark);
+}
+
+.hero-cta-group {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.btn-primary {
+    background-color: var(--ink-dark);
+    color: var(--bg-parchment-light);
+    border: 2px solid var(--ink-dark);
+    padding: 0.75rem 1.6rem;
+    font-family: inherit;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    transition: all 0.25s ease;
+    box-shadow: var(--shadow-soft);
+}
+
+.btn-primary:hover {
+    background-color: var(--gold-dark);
+    border-color: var(--gold-dark);
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-deep);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--ink-dark);
+    border: 2px solid var(--ink-dark);
+    padding: 0.75rem 1.5rem;
+    font-family: inherit;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    transition: all 0.25s ease;
+}
+
+.btn-secondary:hover {
+    background-color: var(--bg-card);
+    border-color: var(--gold-dark);
+    color: var(--gold-dark);
+}
+
+.hero-illustration-block {
+    text-align: center;
+}
+
+.engraving-svg {
+    width: 100%;
+    max-width: 440px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    filter: drop-shadow(0 6px 16px rgba(43, 30, 22, 0.18));
+    transition: transform 0.3s ease;
+}
+
+.engraving-svg:hover {
+    transform: scale(1.015);
+}
+
+/* ==========================================================================
+   2. INTERACTIVE MAP SECTION (ილიას მარშრუტი)
+   ========================================================================== */
+
+.map-section {
+    background: linear-gradient(180deg, var(--bg-parchment), #ebd8b5, var(--bg-parchment));
+    border-top: 1px solid var(--border-soft);
+    border-bottom: 1px solid var(--border-soft);
+    position: relative;
+}
+
+.map-layout-grid {
+    display: grid;
+    grid-template-columns: 1.25fr 0.75fr;
+    gap: 2rem;
+    align-items: start;
+}
+
+.antique-map-card {
+    background-color: var(--bg-parchment-light);
+    border: 3px solid var(--ink-dark);
+    position: relative;
+    padding: 1.25rem;
+    box-shadow: var(--shadow-deep);
+    border-radius: 2px;
+}
+
+.map-decor-corner {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    border: 2px solid var(--gold-dark);
+    pointer-events: none;
+}
+.map-decor-corner.tl { top: 6px; left: 6px; border-right: none; border-bottom: none; }
+.map-decor-corner.tr { top: 6px; right: 6px; border-left: none; border-bottom: none; }
+.map-decor-corner.bl { bottom: 6px; left: 6px; border-right: none; border-top: none; }
+.map-decor-corner.br { bottom: 6px; right: 6px; border-left: none; border-top: none; }
+
+.map-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--border-soft);
+    padding-bottom: 0.75rem;
+    margin-bottom: 1rem;
+}
+
+.map-card-header h3 {
+    font-size: 1.15rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.map-compass-badge {
+    font-size: 0.85rem;
+    color: var(--bronze);
+    font-style: italic;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+/* Map SVG Canvas Container */
+.map-canvas-wrapper {
+    position: relative;
+    width: 100%;
+    background-color: #f7eedb;
+    border: 1px solid var(--border-soft);
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.military-road-svg {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Map Waypoint Pins */
+.map-waypoint {
+    cursor: pointer;
+    transition: transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.map-waypoint:hover {
+    transform: scale(1.18);
+}
+
+.map-waypoint.active .pin-pulse {
+    animation: pinGlow 1.5s infinite;
+}
+
+@keyframes pinGlow {
+    0% { r: 12; opacity: 0.8; stroke-width: 2; }
+    50% { r: 22; opacity: 0.2; stroke-width: 1; }
+    100% { r: 12; opacity: 0.8; stroke-width: 2; }
+}
+
+.waypoint-label {
+    font-family: var(--font-heading);
+    font-size: 11px;
+    font-weight: 700;
+    fill: var(--ink-black);
+    paint-order: stroke;
+    stroke: #f7eedb;
+    stroke-width: 3px;
+    stroke-linecap: butt;
+    stroke-linejoin: miter;
+}
+
+/* Waypoint Details Side Panel */
+.map-details-panel {
+    background-color: var(--bg-card);
+    border: 2px solid var(--ink-dark);
+    padding: 1.75rem;
+    box-shadow: var(--shadow-soft);
+    position: relative;
+    border-radius: 2px;
+}
+
+.map-details-panel::before {
+    content: "";
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    right: 4px;
+    bottom: 4px;
+    border: 1px dashed var(--gold-primary);
+    pointer-events: none;
+}
+
+.panel-station-tag {
+    display: inline-block;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    background-color: var(--gold-dark);
+    color: #fff;
+    padding: 0.25rem 0.6rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 0.75rem;
+    border-radius: 2px;
+}
+
+.panel-station-title {
+    font-size: 1.6rem;
+    margin-bottom: 0.25rem;
+}
+
+.panel-station-subtitle {
+    font-size: 0.95rem;
+    color: var(--bronze);
+    font-style: italic;
+    margin-bottom: 1.25rem;
+}
+
+.station-meta-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.6rem;
+    padding: 0.75rem 0;
+    border-top: 1px solid var(--border-soft);
+    border-bottom: 1px solid var(--border-soft);
+    margin-bottom: 1.25rem;
+    font-size: 0.85rem;
+}
+
+.station-meta-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--ink-light);
+}
+
+.station-meta-item strong {
+    color: var(--ink-dark);
+}
+
+.station-quote-box {
+    background-color: var(--bg-parchment-light);
+    border-left: 4px solid var(--gold-dark);
+    padding: 1rem 1.25rem;
+    font-style: italic;
+    font-size: 0.95rem;
+    color: var(--ink-dark);
+    margin-bottom: 1.25rem;
+    position: relative;
+}
+
+.station-quote-box i.fa-quote-left {
+    position: absolute;
+    top: 8px;
+    right: 12px;
+    font-size: 1.5rem;
+    color: rgba(163, 124, 63, 0.2);
+}
+
+.station-text-body {
+    font-size: 0.92rem;
+    line-height: 1.65;
+    color: var(--ink-medium);
+    margin-bottom: 1.25rem;
+}
+
+.station-themes-title {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: var(--ink-dark);
+    letter-spacing: 0.5px;
+    margin-bottom: 0.5rem;
+}
+
+.station-themes-list {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 1.5rem;
+}
+
+.station-themes-list li {
+    font-size: 0.88rem;
+    color: var(--ink-medium);
+    padding: 0.3rem 0 0.3rem 1.4rem;
+    position: relative;
+}
+
+.station-themes-list li::before {
+    content: "❧";
+    position: absolute;
+    left: 0;
+    color: var(--gold-primary);
+}
+
+.dialogue-modal-trigger-btn {
+    width: 100%;
+    background-color: var(--tergi-cyan);
+    color: #fff;
+    border: none;
+    padding: 0.8rem 1rem;
+    font-family: inherit;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    transition: background-color 0.25s ease;
+}
+
+.dialogue-modal-trigger-btn:hover {
+    background-color: #1a3c41;
+}
+
+/* Route Timeline Progress Pills */
+.route-timeline-nav {
+    display: flex;
+    justify-content: space-between;
+    gap: 0.5rem;
+    margin-top: 1.5rem;
+    overflow-x: auto;
+    padding-bottom: 0.5rem;
+}
+
+.timeline-step-btn {
+    flex: 1;
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-soft);
+    padding: 0.6rem 0.5rem;
+    font-family: inherit;
+    font-size: 0.8rem;
+    cursor: pointer;
+    text-align: center;
+    color: var(--ink-medium);
+    transition: all 0.2s ease;
+    border-radius: 2px;
+    white-space: nowrap;
+}
+
+.timeline-step-btn:hover {
+    border-color: var(--gold-dark);
+    color: var(--ink-dark);
+}
+
+.timeline-step-btn.active {
+    background-color: var(--ink-dark);
+    color: #fff;
+    border-color: var(--ink-dark);
+    font-weight: 600;
+}
+
+/* ==========================================================================
+   3. CHARACTERS COMPARISON (პერსონაჟთა ტრიადა)
+   ========================================================================== */
+
+.characters-section {
+    padding: 4rem 0;
+}
+
+.characters-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.75rem;
+}
+
+.character-card {
+    background-color: var(--bg-parchment-light);
+    border: 2px solid var(--ink-dark);
+    box-shadow: var(--shadow-soft);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.character-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-deep);
+}
+
+.character-card::before {
+    content: "";
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    right: 4px;
+    bottom: 4px;
+    border: 1px dashed var(--gold-primary);
+    pointer-events: none;
+}
+
+.character-card-illustration {
+    padding: 1rem 1rem 0 1rem;
+    background-color: #f5ede0;
+    border-bottom: 1px solid var(--border-soft);
+    text-align: center;
+}
+
+.character-card-illustration svg {
+    max-height: 240px;
+    width: 100%;
+}
+
+.character-card-body {
+    padding: 1.5rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.character-role-tag {
+    display: inline-block;
+    align-self: flex-start;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: 700;
+    color: var(--gold-dark);
+    margin-bottom: 0.5rem;
+}
+
+.character-name {
+    font-size: 1.45rem;
+    margin-bottom: 0.35rem;
+}
+
+.character-archetype {
+    font-size: 0.88rem;
+    color: var(--ink-light);
+    font-style: italic;
+    margin-bottom: 1rem;
+}
+
+.character-details-list {
+    margin-top: auto;
+    font-size: 0.88rem;
+    border-top: 1px solid var(--border-soft);
+    padding-top: 1rem;
+}
+
+.character-detail-row {
+    margin-bottom: 0.65rem;
+    line-height: 1.5;
+}
+
+.character-detail-row strong {
+    color: var(--ink-dark);
+    font-size: 0.82rem;
+    text-transform: uppercase;
+    display: block;
+}
+
+.character-quote-box {
+    background-color: var(--bg-card);
+    border-left: 3px solid var(--gold-primary);
+    padding: 0.75rem;
+    font-style: italic;
+    font-size: 0.85rem;
+    margin-top: 1rem;
+    color: var(--ink-dark);
+}
+
+/* Character Comparison Matrix Toggle / Table */
+.comparison-matrix-container {
+    margin-top: 3rem;
+    background-color: var(--bg-parchment-light);
+    border: 2px solid var(--ink-dark);
+    padding: 1.5rem;
+    box-shadow: var(--shadow-soft);
+    border-radius: 2px;
+}
+
+.matrix-header {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.92rem;
+}
+
+.comparison-table th, 
+.comparison-table td {
+    padding: 0.9rem 1.1rem;
+    border: 1px solid var(--border-soft);
+    text-align: left;
+    vertical-align: top;
+}
+
+.comparison-table th {
+    background-color: #eeddbf;
+    font-family: var(--font-heading);
+    color: var(--ink-black);
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.comparison-table tr:nth-child(even) td {
+    background-color: rgba(232, 220, 191, 0.35);
+}
+
+.comparison-table td.criterion-col {
+    font-weight: 700;
+    color: var(--ink-dark);
+    width: 20%;
+    background-color: rgba(163, 124, 63, 0.08);
+}
+
+/* ==========================================================================
+   4. PHILOSOPHICAL TIMELINE & QUOTE BANK (მოძრაობა vs უძრაობა)
+   ========================================================================== */
+
+.philosophy-section {
+    background: linear-gradient(to bottom, var(--bg-parchment), #ebd8b5, var(--bg-parchment));
+    border-top: 1px solid var(--border-soft);
+    border-bottom: 1px solid var(--border-soft);
+}
+
+.quote-bank-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.quote-tab-btn {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-soft);
+    color: var(--ink-medium);
+    padding: 0.6rem 1.25rem;
+    font-family: inherit;
+    font-size: 0.9rem;
+    cursor: pointer;
+    border-radius: 2px;
+    transition: all 0.2s ease;
+}
+
+.quote-tab-btn:hover {
+    border-color: var(--gold-dark);
+    color: var(--ink-dark);
+}
+
+.quote-tab-btn.active {
+    background-color: var(--ink-dark);
+    color: #fff;
+    border-color: var(--ink-dark);
+    font-weight: 600;
+}
+
+.quote-display-card {
+    background-color: var(--bg-parchment-light);
+    border: 2px solid var(--ink-dark);
+    padding: 2.5rem;
+    position: relative;
+    box-shadow: var(--shadow-deep);
+    border-radius: 2px;
+    max-width: 950px;
+    margin: 0 auto;
+}
+
+.quote-display-card::before {
+    content: "";
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    right: 5px;
+    bottom: 5px;
+    border: 1px dashed var(--gold-primary);
+    pointer-events: none;
+}
+
+.quote-card-badge {
+    display: inline-block;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    background-color: var(--gold-dark);
+    color: #fff;
+    padding: 0.3rem 0.8rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 1rem;
+}
+
+.quote-main-text {
+    font-size: 1.5rem;
+    line-height: 1.6;
+    font-style: italic;
+    color: var(--ink-black);
+    margin-bottom: 1.5rem;
+    position: relative;
+    padding-left: 2rem;
+    border-left: 4px solid var(--gold-primary);
+}
+
+.quote-meta-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9rem;
+    color: var(--ink-light);
+    border-top: 1px solid var(--border-soft);
+    padding-top: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.quote-deep-analysis {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-soft);
+    padding: 1.25rem 1.5rem;
+    border-radius: 2px;
+}
+
+.quote-deep-analysis h4 {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    color: var(--ink-dark);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.quote-deep-analysis p {
+    font-size: 0.95rem;
+    margin-bottom: 0;
+}
+
+/* ==========================================================================
+   5. INTERACTIVE QUIZ SECTION (ცოდნის შემოწმება)
+   ========================================================================== */
+
+.quiz-section {
+    padding: 4rem 0;
+}
+
+.quiz-container {
+    max-width: 850px;
+    margin: 0 auto;
+    background-color: var(--bg-parchment-light);
+    border: 3px solid var(--ink-dark);
+    padding: 2.5rem;
+    position: relative;
+    box-shadow: var(--shadow-deep);
+    border-radius: 2px;
+}
+
+.quiz-container::before {
+    content: "";
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    right: 5px;
+    bottom: 5px;
+    border: 1px dashed var(--gold-primary);
+    pointer-events: none;
+}
+
+.quiz-progress-bar-container {
+    margin-bottom: 2rem;
+}
+
+.quiz-progress-text {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: var(--ink-light);
+    margin-bottom: 0.4rem;
+}
+
+.quiz-progress-track {
+    width: 100%;
+    height: 8px;
+    background-color: var(--bg-parchment-dark);
+    border: 1px solid var(--border-soft);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.quiz-progress-fill {
+    height: 100%;
+    width: 12.5%;
+    background: linear-gradient(to right, var(--gold-dark), var(--gold-primary));
+    transition: width 0.3s ease;
+}
+
+.quiz-question-card {
+    display: none;
+}
+
+.quiz-question-card.active {
+    display: block;
+    animation: fadeInQuiz 0.4s ease;
+}
+
+@keyframes fadeInQuiz {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.question-text {
+    font-size: 1.35rem;
+    margin-bottom: 1.5rem;
+    color: var(--ink-dark);
+    line-height: 1.5;
+}
+
+.options-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+    margin-bottom: 1.75rem;
+}
+
+.quiz-option-btn {
+    width: 100%;
+    text-align: left;
+    background-color: var(--bg-card);
+    border: 1.5px solid var(--border-soft);
+    padding: 1rem 1.25rem;
+    font-family: inherit;
+    font-size: 0.98rem;
+    color: var(--ink-dark);
+    cursor: pointer;
+    border-radius: 2px;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.quiz-option-btn:hover:not(:disabled) {
+    background-color: #eeddbf;
+    border-color: var(--gold-dark);
+    transform: translateX(4px);
+}
+
+.option-letter {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    border: 1px solid var(--ink-dark);
+    font-weight: 700;
+    font-size: 0.85rem;
+    flex-shrink: 0;
+}
+
+.quiz-option-btn.correct {
+    background-color: #e2f0d9;
+    border-color: #38761d;
+    color: #1e4611;
+}
+
+.quiz-option-btn.correct .option-letter {
+    background-color: #38761d;
+    color: #fff;
+    border-color: #38761d;
+}
+
+.quiz-option-btn.wrong {
+    background-color: #fce5cd;
+    border-color: #cc0000;
+    color: #780000;
+}
+
+.quiz-option-btn.wrong .option-letter {
+    background-color: #cc0000;
+    color: #fff;
+    border-color: #cc0000;
+}
+
+.quiz-feedback-box {
+    display: none;
+    padding: 1.25rem;
+    background-color: var(--bg-parchment);
+    border: 1px solid var(--border-soft);
+    margin-bottom: 1.5rem;
+    border-radius: 2px;
+    animation: fadeInQuiz 0.3s ease;
+}
+
+.quiz-feedback-box.visible {
+    display: block;
+}
+
+.quiz-feedback-title {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 0.4rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.quiz-feedback-title.correct {
+    color: #274e13;
+}
+
+.quiz-feedback-title.wrong {
+    color: #990000;
+}
+
+.quiz-feedback-explanation {
+    font-size: 0.92rem;
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+
+.quiz-nav-actions {
+    display: flex;
+    justify-content: flex-end;
+}
+
+/* Quiz Result / Certificate Screen */
+.quiz-result-screen {
+    display: none;
+    text-align: center;
+    padding: 2rem 1rem;
+}
+
+.quiz-result-screen.active {
+    display: block;
+    animation: fadeInQuiz 0.5s ease;
+}
+
+.result-score-circle {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    border: 4px double var(--gold-dark);
+    background-color: var(--bg-parchment);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem auto;
+    box-shadow: var(--shadow-soft);
+}
+
+.score-number {
+    font-size: 2.4rem;
+    font-weight: 800;
+    color: var(--ink-black);
+    line-height: 1;
+}
+
+.score-max {
+    font-size: 0.9rem;
+    color: var(--ink-light);
+}
+
+.result-title {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+}
+
+.result-message {
+    font-size: 1.05rem;
+    color: var(--ink-medium);
+    max-width: 600px;
+    margin: 0 auto 1.75rem auto;
+}
+
+/* Certificate Generator Frame */
+.certificate-frame {
+    border: 3px double var(--gold-dark);
+    background-color: #fdfaf3;
+    padding: 2rem;
+    margin: 2rem auto;
+    max-width: 650px;
+    position: relative;
+    box-shadow: var(--shadow-soft);
+}
+
+.certificate-seal {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background-color: var(--gold-dark);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem auto;
+    font-size: 1.8rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+.certificate-title {
+    font-size: 1.4rem;
+    color: var(--ink-black);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 0.5rem;
+}
+
+.certificate-recipient {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: var(--bronze);
+    border-bottom: 1px dashed var(--gold-dark);
+    display: inline-block;
+    padding: 0 1.5rem;
+    margin: 0.5rem 0;
+}
+
+.certificate-text {
+    font-size: 0.92rem;
+    color: var(--ink-medium);
+    margin-top: 0.75rem;
+    font-style: italic;
+}
+
+/* ==========================================================================
+   6. TEACHER & STUDENT GUIDE (პედაგოგის კუთხე)
+   ========================================================================== */
+
+.pedagogy-section {
+    background-color: var(--bg-card);
+    border-top: 1px solid var(--border-soft);
+    padding: 4rem 0;
+}
+
+.pedagogy-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+.pedagogy-card {
+    background-color: var(--bg-parchment-light);
+    border: 2px solid var(--ink-dark);
+    padding: 1.75rem;
+    position: relative;
+    box-shadow: var(--shadow-soft);
+    border-radius: 2px;
+}
+
+.pedagogy-card::before {
+    content: "";
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    right: 4px;
+    bottom: 4px;
+    border: 1px dashed var(--gold-primary);
+    pointer-events: none;
+}
+
+.pedagogy-card h3 {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    color: var(--ink-black);
+    border-bottom: 1px solid var(--border-soft);
+    padding-bottom: 0.5rem;
+}
+
+.pedagogy-card h3 i {
+    color: var(--gold-dark);
+}
+
+.pedagogy-accordion-item {
+    border-bottom: 1px solid var(--border-soft);
+    padding: 0.85rem 0;
+}
+
+.pedagogy-accordion-item:last-child {
+    border-bottom: none;
+}
+
+.accordion-title {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--ink-dark);
+    margin-bottom: 0.35rem;
+}
+
+.accordion-body {
+    font-size: 0.9rem;
+    color: var(--ink-medium);
+    margin-bottom: 0;
+}
+
+/* ==========================================================================
+   Modal Dialog (დიალოგები & დეტალური ანალიზი)
+   ========================================================================== */
+
+.modal-backdrop {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(29, 20, 14, 0.75);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    backdrop-filter: blur(3px);
+}
+
+.modal-backdrop.active {
+    display: flex;
+    animation: fadeInModal 0.3s ease;
+}
+
+@keyframes fadeInModal {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.modal-content-card {
+    background-color: var(--bg-parchment-light);
+    border: 3px solid var(--ink-dark);
+    width: 100%;
+    max-width: 800px;
+    max-height: 90vh;
+    overflow-y: auto;
+    padding: 2.25rem;
+    position: relative;
+    box-shadow: var(--shadow-deep);
+    border-radius: 2px;
+}
+
+.modal-content-card::before {
+    content: "";
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    right: 5px;
+    bottom: 5px;
+    border: 1px dashed var(--gold-primary);
+    pointer-events: none;
+}
+
+.modal-close-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: 1px solid var(--ink-dark);
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--ink-dark);
+    transition: all 0.2s ease;
+    z-index: 10;
+}
+
+.modal-close-btn:hover {
+    background-color: var(--crimson);
+    color: #fff;
+    border-color: var(--crimson);
+}
+
+.modal-header-area {
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border-soft);
+    padding-bottom: 1rem;
+}
+
+.modal-badge {
+    display: inline-block;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    background-color: var(--gold-dark);
+    color: #fff;
+    padding: 0.2rem 0.6rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.modal-title {
+    font-size: 1.8rem;
+    color: var(--ink-black);
+}
+
+.modal-subtitle {
+    font-size: 1rem;
+    color: var(--bronze);
+    font-style: italic;
+}
+
+.dialogue-script-box {
+    background-color: var(--bg-card);
+    border-left: 4px solid var(--tergi-cyan);
+    padding: 1.25rem;
+    margin-bottom: 1.5rem;
+    font-family: inherit;
+    line-height: 1.8;
+}
+
+.dialogue-script-box strong {
+    color: var(--ink-black);
+    display: inline-block;
+    margin-top: 0.5rem;
+}
+
+/* Footer (ივერიის კოლოფონი) */
+.site-footer {
+    background-color: #1a120c;
+    color: #cfc2a9;
+    padding: 3rem 0 2rem 0;
+    border-top: 3px double var(--gold-dark);
+    font-size: 0.9rem;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.footer-col h4 {
+    color: var(--gold-light);
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid #3c2f2f;
+    padding-bottom: 0.5rem;
+}
+
+.footer-col p {
+    color: #af9f88;
+    font-size: 0.88rem;
+}
+
+.footer-links {
+    list-style: none;
+}
+
+.footer-links li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-links a {
+    color: #cfc2a9;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.footer-links a:hover {
+    color: var(--gold-light);
+}
+
+.footer-bottom-bar {
+    text-align: center;
+    border-top: 1px solid #2f2218;
+    padding-top: 1.5rem;
+    font-size: 0.8rem;
+    color: #8c7a65;
+}
+
+/* ==========================================================================
+   Responsive Adaptations
+   ========================================================================== */
+
+.landscape-banner-section {
+    padding: 2.5rem 0;
+    background: linear-gradient(180deg, var(--bg-parchment), #ebd8b5 50%, var(--bg-parchment));
+}
+
+.landscape-banner-grid {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 2rem;
+    align-items: center;
+}
+
+@media (max-width: 992px) {
+    .landscape-banner-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .masthead-title {
+        font-size: 2.4rem;
+    }
+
+    .hero-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .map-layout-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .characters-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .pedagogy-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .masthead-title {
+        font-size: 1.9rem;
+    }
+
+    .masthead-top-bar {
+        flex-direction: column;
+        gap: 0.5rem;
+        text-align: center;
+    }
+
+    .section-title {
+        font-size: 1.7rem;
+    }
+
+    .hero-cta-group {
+        flex-direction: column;
+    }
+
+    .station-meta-list {
+        grid-template-columns: 1fr;
+    }
+
+    .comparison-table th, 
+    .comparison-table td {
+        font-size: 0.8rem;
+        padding: 0.5rem;
+    }
+}

@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ილია ჭავჭავაძე — „მგზავრის წერილები“ | საგანმანათლებლო პლატფორმა</title>
+    
+    <!-- Google Fonts: Noto Serif Georgian & Playfair Display -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Georgian:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome 6 Icons CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom 19th Century Epoch Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- ==========================================================================
+         MASTHEAD (XIX საუკუნის ქართული პერიოდიკის სტილი: „ივერია“ / „ცისკარი“)
+         ========================================================================== -->
+    <header class="site-masthead">
+        <div class="container">
+            <div class="masthead-top-bar">
+                <div class="top-bar-left">
+                    <span><i class="fa-solid fa-calendar-days"></i> 1861 წელი</span>
+                    <span><i class="fa-solid fa-map-location-dot"></i> საქართველოს სამხედრო გზა</span>
+                </div>
+                <div class="top-bar-right">
+                    <span>ჟურნალი „საქართველოს მოამბე“</span>
+                    <button class="ambient-sound-btn" id="ambient-audio-toggle" title="ჩართე/გამორთე ბუნებრივი ხმა">
+                        <i class="fa-solid fa-water"></i>
+                        <span>მოუსმინე თერგის ხმაურს</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="masthead-title-area">
+                <div class="masthead-issue">საგანმანათლებლო გამოცემა • ტომი I</div>
+                <h1 class="masthead-title">მგზავრის წერილები</h1>
+                <div class="masthead-author">თხზულება ილია ჭავჭავაძისა</div>
+                <div class="masthead-motto">
+                    „მოძრაობა და მხოლოდ მოძრაობა არის, ჩემო თერგო, ქვეყნის ღონისა და სიცოცხლის მიმცემი...“
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ==========================================================================
+         NAVIGATION BAR (ანტიკვარული სარჩევი)
+         ========================================================================== -->
+    <nav class="main-nav" id="main-nav">
+        <div class="container">
+            <ul class="nav-container">
+                <li><a href="#intro" class="nav-link active"><i class="fa-solid fa-feather"></i> შესავალი</a></li>
+                <li><a href="#route-map" class="nav-link"><i class="fa-solid fa-compass"></i> მარშრუტის რუკა</a></li>
+                <li><a href="#characters" class="nav-link"><i class="fa-solid fa-users-viewfinder"></i> პერსონაჟთა ტრიადა</a></li>
+                <li><a href="#philosophy" class="nav-link"><i class="fa-solid fa-scroll"></i> მოძრაობა vs უძრაობა</a></li>
+                <li><a href="#quiz" class="nav-link"><i class="fa-solid fa-graduation-cap"></i> ცოდნის ქვიზი</a></li>
+                <li><a href="#pedagogy" class="nav-link"><i class="fa-solid fa-chalkboard-user"></i> პედაგოგის კუთხე</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- ==========================================================================
+         1. HERO & HISTORICAL INTRO SECTION
+         ========================================================================== -->
+    <section class="hero-section" id="intro">
+        <div class="container">
+            <div class="hero-grid">
+                <div class="hero-text-block ornate-frame">
+                    <span class="section-tag">ეპოქალური კონტექსტი • 1861</span>
+                    <h2 class="section-title">ახალი ეპოქის გარიჟრაჟი</h2>
+                    <p class="hero-lead drop-cap">
+                        1861 წელს პეტერბურგის უნივერსიტეტიდან სამშობლოში დაბრუნებულმა 24 წლის ილია ჭავჭავაძემ დაწერა „მგზავრის წერილები“ — ნაწარმოები, რომელმაც ქართულ საზოგადოებრივ ცნობიერებაში ნამდვილი სულიერი და ინტელექტუალური რევოლუცია მოახდინა.
+                    </p>
+                    <p>
+                        საქართველოს სამხედრო გზაზე გავლებული მარშრუტი ვლადიკავკაზიდან ტფილისამდე არ ყოფილა მხოლოდ გეოგრაფიული მგზავრობა — ეს იყო უძრაობაში ჩაძირული ქვეყნის გამოფხიზლების, კოლონიური თვითმპყრობელობის მხილებისა და ეროვნული თვითგამორკვევის უდიდესი მანიფესტი.
+                    </p>
+
+                    <div class="hero-badges">
+                        <div class="hero-badge"><i class="fa-solid fa-landmark"></i> ეროვნულ-განმათავისუფლებელი მოძრაობა</div>
+                        <div class="hero-badge"><i class="fa-solid fa-users"></i> „თერგდალეულთა“ დაბადება</div>
+                        <div class="hero-badge"><i class="fa-solid fa-bolt"></i> მამათა და შვილთა ბრძოლა</div>
+                    </div>
+
+                    <div class="hero-cta-group">
+                        <a href="#route-map" class="btn-primary">
+                            <i class="fa-solid fa-map-location-dot"></i> დაიწყე მოგზაურობა რუკაზე
+                        </a>
+                        <a href="#quiz" class="btn-secondary">
+                            <i class="fa-solid fa-pen-clip"></i> შეამოწმე ცოდნა
+                        </a>
+                    </div>
+                </div>
+
+                <div class="hero-illustration-block" id="hero-illustration-slot">
+                    <!-- Engraving SVG dynamically injected -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="ornate-divider">❦ ⚜ ❧</div>
+    </div>
+
+    <!-- ==========================================================================
+         2. INTERACTIVE ROUTE MAP (ილიას მოგზაურობის მარშრუტი)
+         ========================================================================== -->
+    <section class="map-section" id="route-map">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">ინტერაქტიული კარტოგრაფია</span>
+                <h2 class="section-title">საქართველოს სამხედრო გზა (XIX ს.)</h2>
+                <p class="section-subtitle">
+                    გაჰყევით ილიას ეტლს ჩრდილოეთ კავკასიიდან ტფილისამდე. დააწკაპუნეთ რუკის პუნქტებზე ეპოქალური დეტალების, იდეური ანალიზისა და პერსონაჟთა დიალოგების გასაცნობად.
+                </p>
+            </div>
+
+            <div class="map-layout-grid">
+                <!-- Antique Cartography SVG Canvas -->
+                <div class="antique-map-card">
+                    <div class="map-decor-corner tl"></div>
+                    <div class="map-decor-corner tr"></div>
+                    <div class="map-decor-corner bl"></div>
+                    <div class="map-decor-corner br"></div>
+
+                    <div class="map-card-header">
+                        <h3><i class="fa-solid fa-compass" style="color: var(--gold-dark); margin-right: 0.5rem;"></i> გენერალური რუკა • 1861</h3>
+                        <div class="map-compass-badge">
+                            <i class="fa-solid fa-mountain-sun"></i> კავკასიონის მთავარი ქედი
+                        </div>
+                    </div>
+
+                    <div class="map-canvas-wrapper" id="antique-map-svg-container">
+                        <!-- SVG Map dynamically rendered here -->
+                    </div>
+
+                    <!-- Horizontal Timeline Navigation Pills -->
+                    <div class="route-timeline-nav" id="route-timeline-nav">
+                        <!-- Buttons generated dynamically -->
+                    </div>
+                </div>
+
+                <!-- Active Station Side Details Card -->
+                <div class="map-details-panel" id="station-details-panel">
+                    <!-- Station details dynamically injected -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Landscape & Epoch Illustrations Banner Slot -->
+    <section class="landscape-banner-section">
+        <div class="container">
+            <div class="landscape-banner-grid">
+                <div id="dariali-landscape-slot">
+                    <!-- Dariali Gorge Engraving dynamically injected -->
+                </div>
+                <div id="carriage-illustration-slot">
+                    <!-- Carriage Engraving dynamically injected -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="ornate-divider">❦ ⚜ ❧</div>
+    </div>
+
+    <!-- ==========================================================================
+         3. CHARACTERS TRIAD & COMPARISON (პერსონაჟთა ტრიადა)
+         ========================================================================== -->
+    <section class="characters-section" id="characters">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">პერსონაჟთა გალერეა & ტიპაჟები</span>
+                <h2 class="section-title">იდეური ტრიადა: სამი ეპოქალური ხედვა</h2>
+                <p class="section-subtitle">
+                    ნაწარმოების სამი მთავარი ფიგურა წარმოადგენს სამ სრულიად განსხვავებულ მსოფლმხედველობას: იმპერიულ ბიუროკრატიას, ხალხურ ცნობიერებასა და პროგრესულ ევროპულ განმანათლებლობას.
+                </p>
+            </div>
+
+            <!-- 3 Comparative Character Cards -->
+            <div class="characters-grid" id="characters-cards-grid">
+                <!-- Cards injected via JS with authentic Woodcut SVGs -->
+            </div>
+
+            <!-- Detailed Comparative Matrix Table -->
+            <div class="comparison-matrix-container">
+                <div class="matrix-header">
+                    <h3><i class="fa-solid fa-table-columns" style="color: var(--gold-dark); margin-right: 0.5rem;"></i> პერსონაჟთა შედარებითი ანალიზი</h3>
+                    <p style="font-size: 0.9rem; color: var(--ink-light); margin-bottom: 0;">
+                        შეადარეთ რუსი ოფიცრის, ლელო თათარაშვილისა და ილია ჭავჭავაძის არსებითი მახასიათებლები.
+                    </p>
+                </div>
+                <div id="comparison-table-slot" style="overflow-x: auto;">
+                    <!-- Table injected dynamically -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="ornate-divider">❦ ⚜ ❧</div>
+    </div>
+
+    <!-- ==========================================================================
+         4. PHILOSOPHY OF MOTION VS INACTION (მოძრაობის ფილოსოფია)
+         ========================================================================== -->
+    <section class="philosophy-section" id="philosophy">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">ფილოსოფიური ბირთვი & ციტატების ბანკი</span>
+                <h2 class="section-title">„მოძრაობა და მხოლოდ მოძრაობა...“</h2>
+                <p class="section-subtitle">
+                    ილიას დიალექტიკური ხედვა: თერგის ბობოქარი დინება, როგორც სიცოცხლისა და ბრძოლის არსი, და მყინვარის ცივი სიმშვიდე, როგორც უძრაობისა და სულიერი სიკვდილის მეტაფორა.
+                </p>
+            </div>
+
+            <!-- Filter Tabs for Philosophical Concepts -->
+            <div class="quote-bank-tabs" id="quote-bank-tabs">
+                <!-- Injected via JS -->
+            </div>
+
+            <!-- Active Quote Display Card -->
+            <div id="quote-display-slot">
+                <!-- Injected via JS -->
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="ornate-divider">❦ ⚜ ❧</div>
+    </div>
+
+    <!-- ==========================================================================
+         5. INTERACTIVE KNOWLEDGE QUIZ (ცოდნის შემოწმება & სერტიფიკატი)
+         ========================================================================== -->
+    <section class="quiz-section" id="quiz">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">ინტერაქტიული შემოწმება</span>
+                <h2 class="section-title">გახდი „თერგდალეული“ — ცოდნის ქვიზი</h2>
+                <p class="section-subtitle">
+                    უპასუხეთ 8 სიღრმისეულ კითხვას „მგზავრის წერილების“ ისტორიული კონტექსტის, სიმბოლოებისა და იდეების შესახებ და მიიღეთ პერსონალიზებული საპატიო სიგელი.
+                </p>
+            </div>
+
+            <div class="quiz-container">
+                <div class="quiz-progress-bar-container">
+                    <div class="quiz-progress-text">
+                        <span id="quiz-progress-text-display">კითხვა 1 / 8</span>
+                        <span>ტესტირება</span>
+                    </div>
+                    <div class="quiz-progress-track">
+                        <div class="quiz-progress-fill" id="quiz-progress-fill"></div>
+                    </div>
+                </div>
+
+                <div id="quiz-card-slot">
+                    <!-- Quiz Cards and Results injected dynamically -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="ornate-divider">❦ ⚜ ❧</div>
+    </div>
+
+    <!-- ==========================================================================
+         6. TEACHER & STUDENT GUIDE (პედაგოგის კუთხე)
+         ========================================================================== -->
+    <section class="pedagogy-section" id="pedagogy">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">მეთოდიკური რესურსები</span>
+                <h2 class="section-title">პედაგოგისა და მოსწავლის სახელმძღვანელო</h2>
+                <p class="section-subtitle">
+                    სადისკუსიო კითხვები სასკოლო სემინარებისთვის, ესეების სარეკომენდაციო თემები და ეროვნული სასწავლო გეგმის კომპეტენციები.
+                </p>
+            </div>
+
+            <div class="pedagogy-grid">
+                <!-- Discussions Card -->
+                <div class="pedagogy-card">
+                    <h3><i class="fa-solid fa-comments"></i> სადისკუსიო საკითხები კლასისთვის</h3>
+                    <div id="pedagogy-discussions-slot">
+                        <!-- Injected dynamically -->
+                    </div>
+                </div>
+
+                <!-- Essay Topics & Outcomes Card -->
+                <div class="pedagogy-card">
+                    <h3><i class="fa-solid fa-pen-nib"></i> ესეების თემები & შედეგები</h3>
+                    <div id="pedagogy-essays-slot">
+                        <!-- Injected dynamically -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+         MODAL DIALOG (სრული დიალოგები & დეტალური ანალიზი)
+         ========================================================================== -->
+    <div class="modal-backdrop" id="dialogue-modal">
+        <div class="modal-content-card">
+            <button class="modal-close-btn" onclick="closeModal()" title="დახურვა">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div id="dialogue-modal-body">
+                <!-- Injected dynamically -->
+            </div>
+        </div>
+    </div>
+
+    <!-- ==========================================================================
+         FOOTER (ივერიის კოლოფონი და ისტორიული ცნობარი)
+         ========================================================================== -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>ილია ჭავჭავაძე (1837–1907)</h4>
+                    <p>
+                        მწერალი, პოეტი, პუბლიცისტი, პოლიტიკური და საზოგადო მოღვაწე, საქართველოს ეროვნულ-განმათავისუფლებელი მოძრაობის უდავო წინამძღოლი. საქართველოს მართლმადიდებელი ეკლესიის მიერ წმინდანად შერაცხილი, როგორც წმინდა ილია მართალი.
+                    </p>
+                </div>
+
+                <div class="footer-col">
+                    <h4>სასწავლო რესურსები</h4>
+                    <ul class="footer-links">
+                        <li><a href="#route-map"><i class="fa-solid fa-angle-right"></i> საქართველოს სამხედრო გზა</a></li>
+                        <li><a href="#characters"><i class="fa-solid fa-angle-right"></i> პერსონაჟთა შედარება</a></li>
+                        <li><a href="#philosophy"><i class="fa-solid fa-angle-right"></i> მოძრაობის ფილოსოფია</a></li>
+                        <li><a href="#quiz"><i class="fa-solid fa-angle-right"></i> თერგდალეულის ქვიზი</a></li>
+                        <li><a href="#pedagogy"><i class="fa-solid fa-angle-right"></i> პედაგოგის მეთოდიკა</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>ისტორიული ცნობა</h4>
+                    <p>
+                        „მგზავრის წერილები“ პირველად გამოქვეყნდა 1863 წელს ილიას მიერ დაარსებულ ჟურნალ „საქართველოს მოამბეში“, რამაც საფუძველი ჩაუყარა 60-იანელთა („თერგდალეულთა“) მოძრაობას.
+                    </p>
+                    <p style="margin-top: 0.5rem; color: var(--gold-primary); font-size: 0.85rem;">
+                        <i class="fa-solid fa-scroll"></i> „აწმყო თუ არა გვწყალობს, მომავალი ჩვენია!“
+                    </p>
+                </div>
+            </div>
+
+            <div class="footer-bottom-bar">
+                <p>© 1861–2026 „მგზავრის წერილები“ — ინტერაქტიული საგანმანათლებლო პლატფორმა მოსწავლეებისა და პედაგოგებისთვის.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- App Scripts -->
+    <script src="js/data.js"></script>
+    <script src="js/illustrations.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
